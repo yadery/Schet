@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Итого решено примеров"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tasksNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tasks"
+        app:layout_constraintStart_toStartOf="@+id/tasks"
+        app:layout_constraintTop_toBottomOf="@+id/tasks" />
+
+    <TextView
+        android:id="@+id/rightAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Правильно"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasksNumber" />
+
+    <TextView
+        android:id="@+id/rightAnswersNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rightAnswers"
+        app:layout_constraintStart_toStartOf="@+id/rightAnswers"
+        app:layout_constraintTop_toBottomOf="@+id/rightAnswers" />
+
+    <TextView
+        android:id="@+id/wrongAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:text="Неправильно"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasksNumber" />
+
+    <TextView
+        android:id="@+id/wrongAnswersNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/wrongAnswers"
+        app:layout_constraintStart_toStartOf="@+id/wrongAnswers"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswers" />
+
+    <TextView
+        android:id="@+id/percentNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="00.00%"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wrongAnswersNum" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentNum">
+
+        <TextView
+            android:id="@+id/number1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="2"
+            android:height="30sp"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/operator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="2"
+            android:height="30sp"
+            android:text="+"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="2"
+            android:height="30sp"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/equalSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="2"
+            android:height="30sp"
+            android:text="="
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="1"
+            android:width="50dp"
+            android:ems="10"
+            android:hint="00"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5sp"
+        android:layout_marginTop="20dp"
+        android:clickable="false"
+        android:enabled="false"
+        android:onClick="check"
+        android:text="Проверить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5sp"
+        android:layout_marginTop="20dp"
+        android:onClick="start"
+        android:text="Старт"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
